@@ -1,30 +1,28 @@
+import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.naming.Context;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.transaction.UserTransaction;
+import java.security.MessageDigest;
 
 public class Application {
 
-    private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("maven-test");
 
     public static void main(String[] args) {
-        System.out.println("test");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("maven-test");
+        EntityManager em = emf.createEntityManager();
 
-        Customer customer = new Customer();
-        customer.setId("gayan");
-        EntityManager entityManager = emf.createEntityManager();
-        EntityTransaction tx = entityManager.getTransaction();
-        tx.begin();
-        entityManager.persist(customer);
-        tx.commit();
-        entityManager.close();
-
-
-
-
-
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        Message message = new Message();
+        message.setText("test text");
+        em.persist(message);
+        transaction.commit();
+        emf.close();
 
 
     }
