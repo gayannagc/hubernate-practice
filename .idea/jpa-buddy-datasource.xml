@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="66591d45-3c7b-4117-99c9-a25499b2a10b" name="hibernate-practice" url="jdbc:postgresql://localhost/jpa-hibernate" driverClass="org.postgresql.Driver" />
+    </data-sources>
+    <data-source-infos>
+      <data-source-info id="66591d45-3c7b-4117-99c9-a25499b2a10b" persistence-unit-name="Default" />
+    </data-source-infos>
+  </component>
+</project>
