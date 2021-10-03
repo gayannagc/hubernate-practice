@@ -5,8 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@Getter
-@Setter
+
 @Entity
 public class Customer implements Serializable {
 
@@ -14,4 +13,13 @@ public class Customer implements Serializable {
     private String id;
 
     private String name;
+
+    private String firstName;
+    private String lastName;
+
+    private String getName(){
+        return firstName + lastName;
+    }
+
+
 }

@@ -15,12 +15,8 @@ public class Application {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("maven-test");
         EntityManager em = emf.createEntityManager();
-
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
-        Message message = new Message();
-        message.setText("test text");
-        em.persist(message);
         transaction.commit();
         emf.close();
 
