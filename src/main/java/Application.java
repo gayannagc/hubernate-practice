@@ -8,18 +8,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.transaction.UserTransaction;
 import java.security.MessageDigest;
+import java.util.AbstractList;
 
 public class Application {
 
 
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("maven-test");
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
-        transaction.begin();
-        transaction.commit();
-        emf.close();
-
+        Animal animal  = new Animal();
 
     }
 }
